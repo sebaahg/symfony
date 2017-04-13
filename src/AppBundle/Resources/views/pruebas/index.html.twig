@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+{% block container %}
+    {{texto}}
+    {#Esto es un comentario#}
+    <hr>
+    {{fruta.pera}}
+     {% if fruta.pera starts with "r"%}
+    {{fruta.manzana}}
+    {% endif %}
+    <hr>
+    {% set variable="Hola twig" %}
+    {{variable}}
+    <hr>
+      {% if productos|length > 0 %}
+    <ul>
+      
+    {% for producto in productos %}
+        
+        <li>{{producto.producto}} - {{producto.precio}} </li>
+        
+        {% endfor %}
+      </ul>
+        {%endif%}
+        <hr/>
+        {% set  fecha=date("-2 days","America/Santiago")%}
+        {{dump(fecha)}}
+        <hr/>
+        {{include("AppBundle:pruebas:partial.html.twig")}}
+        {{max([9,8,2])}}
+        <br>
+        {{random(1000)}}
+        <hr/>
+        {% for i in range(0,25,3)%}
+            {{i}} <br/>
+            {% endfor %}
+            <hr/>
+            {{generateTable(5,7)}}
+{%endblock%}
+
+
