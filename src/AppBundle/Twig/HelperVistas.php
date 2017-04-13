@@ -18,6 +18,7 @@ class HelperVistas extends \Twig_Extension{
 		}
 		$table.="</table>";
 		return $table;
+		
 	}
 	
 	public function getName() {
